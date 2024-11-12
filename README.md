@@ -1,4 +1,4 @@
-Aplikasi PELI-BISPAK (Pembayaran Listrik Habis Pakai) dibut dengan :
+Aplikasi PELI-BISPAK (Pembayaran Listrik Habis Pakai) dibangun dengan :
 1. PHP 8.2 (Laravel Framework v.11)
 2. JS (Jquery)
 3. HTML
