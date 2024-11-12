@@ -1,0 +1,33 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('pelanggan', function (Blueprint $table) {
+            $table->bigIncrements('id_pelanggan');
+            $table->text('alamat');
+            $table->string('meter_id', 12)->unique();
+            $table->unsignedBigInteger('user_id');
+            // $table->unsignedBigInteger('tarif_id');
+
+            $table->foreign('user_id')->references('id')->on('users');
+            // $table->foreign('tarif_id')->references('id_tarif')->on('tarif');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('pelanggan');
+    }
+};
